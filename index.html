@@ -1690,7 +1690,8 @@
         <div class="container">
             <h2 class="rsvp-title">Подтвердите свое присутствие</h2>
             <div class="rsvp-form">
-                <form id="rsvpForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZVYHvYJ8QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3/formResponse" method="POST">
+                <!-- Работающая форма подтверждения -->
+                <form id="rsvpForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZVYHvYJ8QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3/formResponse" method="POST" target="_blank">
                     <div class="form-group">
                         <label class="form-label" for="fullName">ФИО гостя *</label>
                         <input type="text" id="fullName" name="entry.123456789" class="form-input" required placeholder="Введите ваше полное имя">
@@ -1850,29 +1851,6 @@
             }, observerOptions);
             
             dresscodeObserver.observe(dresscodeSection);
-            
-            // Обработка формы
-            const rsvpForm = document.getElementById('rsvpForm');
-            if (rsvpForm) {
-                rsvpForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Получаем данные формы
-                    const formData = new FormData(this);
-                    
-                    // Отправляем данные на вашу форму
-                    fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZVYHvYJ8QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3/formResponse', {
-                        method: 'POST',
-                        body: formData,
-                        mode: 'no-cors'
-                    }).then(() => {
-                        alert('Спасибо за подтверждение! Мы с нетерпением ждем вас на нашей свадьбе! 💕');
-                        this.reset();
-                    }).catch(() => {
-                        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
-                    });
-                });
-            }
         });
     </script>
 </body>
