@@ -35,44 +35,11 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-        }
-
-        .flower {
-            position: absolute;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-
-        .flower-1 {
-            top: 10%;
-            left: 5%;
-            font-size: 5rem;
-            color: #8B9A46;
-            transform: rotate(20deg);
-        }
-
-        .flower-2 {
-            top: 30%;
-            right: 10%;
-            font-size: 7rem;
-            color: #a8b388;
-            transform: rotate(-15deg);
-        }
-
-        .flower-3 {
-            bottom: 20%;
-            left: 15%;
-            font-size: 6rem;
-            color: #d2b48c;
-            transform: rotate(10deg);
-        }
-
-        .flower-4 {
-            bottom: 15%;
-            right: 20%;
-            font-size: 5rem;
-            color: #ffb6c1;
-            transform: rotate(-25deg);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(139, 154, 70, 0.03) 0px, transparent 40px),
+                radial-gradient(circle at 90% 30%, rgba(168, 179, 136, 0.03) 0px, transparent 50px),
+                radial-gradient(circle at 20% 80%, rgba(210, 180, 140, 0.03) 0px, transparent 45px),
+                radial-gradient(circle at 80% 70%, rgba(255, 182, 193, 0.03) 0px, transparent 40px);
         }
 
         /* Фон для фотографий */
@@ -248,7 +215,7 @@
             border-radius: 2px;
         }
 
-        /* Календарь */
+        /* Календарь - исправлен для мобильных */
         .calendar-section {
             background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(250,250,250,0.95) 100%);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
@@ -257,11 +224,11 @@
         }
 
         .calendar-container {
-            max-width: 800px;
+            max-width: 100%;
             margin: 40px auto;
             background: rgba(255, 255, 255, 0.99);
             border-radius: 25px;
-            padding: 50px;
+            padding: 30px 20px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
@@ -281,7 +248,8 @@
         }
 
         .calendar-header {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            text-align: center;
         }
 
         .calendar-month {
@@ -303,23 +271,22 @@
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 12px;
-            margin-top: 25px;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            padding-bottom: 10px;
+            gap: 8px;
+            margin-top: 20px;
+            width: 100%;
         }
 
         .calendar-day-name {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             color: #8B9A46;
-            padding: 12px;
-            font-size: 0.95rem;
+            padding: 8px;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             background: rgba(139, 154, 70, 0.08);
-            border-radius: 8px;
+            border-radius: 6px;
+            text-align: center;
         }
 
         .calendar-date {
@@ -331,7 +298,7 @@
             border-radius: 50%;
             background: #f8f9fa;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -358,7 +325,7 @@
             box-shadow: 0 8px 25px rgba(139, 154, 70, 0.5);
             transform: scale(1.2);
             animation: pulse 2s infinite;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
             position: relative;
             z-index: 10;
@@ -368,11 +335,11 @@
         .calendar-date.today::after {
             content: 'Свадьба!';
             position: absolute;
-            bottom: -35px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #8B9A46;
             font-weight: 600;
             white-space: nowrap;
@@ -428,8 +395,8 @@
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            max-width: 900px;
+            gap: 20px;
+            max-width: 100%;
             margin: 0 auto;
             flex-wrap: wrap;
             animation: scaleIn 0.8s ease 0.3s;
@@ -439,8 +406,8 @@
         .countdown-box {
             background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,248,248,0.98) 100%);
             border-radius: 20px;
-            padding: 35px 25px;
-            min-width: 130px;
+            padding: 25px 15px;
+            min-width: 110px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
@@ -467,17 +434,17 @@
 
         .countdown-number {
             font-family: 'Aquarelle', cursive;
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 600;
             color: #2D3142;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1;
         }
 
         .countdown-label {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             color: #666;
             text-transform: lowercase;
             letter-spacing: 0.5px;
@@ -514,9 +481,9 @@
         }
 
         .map-container {
-            max-width: 900px;
+            max-width: 100%;
             margin: 0 auto;
-            height: 450px;
+            height: 400px;
             background: white;
             border-radius: 20px;
             overflow: hidden;
@@ -538,12 +505,12 @@
             color: #555;
             animation: fadeIn 1s ease 0.6s;
             animation-fill-mode: both;
-            padding: 15px 30px;
+            padding: 15px 25px;
             background: rgba(255,255,255,0.9);
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 25px;
             border: 2px solid #8B9A46;
         }
 
@@ -580,10 +547,10 @@
 
         .photos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
             margin: 0 auto;
-            max-width: 1200px;
+            max-width: 1000px;
         }
 
         .photo-card {
@@ -591,13 +558,13 @@
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             position: relative;
-            height: 500px;
+            height: 350px;
             transition: transform 0.4s ease;
             border: 3px solid #e9ecef;
         }
 
         .photo-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
 
@@ -619,7 +586,7 @@
             left: 0;
             right: 0;
             background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            padding: 30px;
+            padding: 25px;
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
@@ -630,15 +597,15 @@
 
         .photo-title {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             color: white;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
         .photo-description {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #e0e0e0;
             line-height: 1.5;
         }
@@ -692,17 +659,17 @@
         .dresscode-palette {
             display: flex;
             justify-content: center;
-            gap: 35px;
+            gap: 25px;
             flex-wrap: wrap;
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
             position: relative;
             z-index: 5;
         }
 
         .dresscode-color {
-            width: 110px;
-            height: 110px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -713,7 +680,7 @@
             overflow: hidden;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(40px) scale(0.8);
+            transform: translateY(30px) scale(0.8);
             transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             z-index: 10;
             border: 3px solid rgba(139, 154, 70, 0.3);
@@ -725,7 +692,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 10px;
+            height: 8px;
             background: rgba(0, 0, 0, 0.15);
             border-radius: 50% 50% 0 0;
         }
@@ -775,7 +742,7 @@
         .dresscode-color.visible:nth-child(5) { transition-delay: 1s; }
 
         .dresscode-color:hover {
-            transform: translateY(-10px) scale(1.12);
+            transform: translateY(-8px) scale(1.1);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             z-index: 20;
             border-color: #8B9A46;
@@ -787,11 +754,11 @@
 
         .dresscode-label {
             position: absolute;
-            bottom: -45px;
+            bottom: -40px;
             left: 50%;
             transform: translateX(-50%) scale(0.8);
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #444;
             white-space: nowrap;
             opacity: 0;
@@ -835,7 +802,7 @@
         }
 
         .timeline-container {
-            max-width: 900px;
+            max-width: 100%;
             margin: 0 auto;
             position: relative;
             animation: scaleIn 0.8s ease 0.3s;
@@ -847,7 +814,7 @@
             height: 8px;
             background: linear-gradient(90deg, #e9ecef 0%, #8B9A46 50%, #e9ecef 100%);
             border-radius: 4px;
-            margin: 60px 0;
+            margin: 50px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -881,7 +848,7 @@
 
         .timeline-event {
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
@@ -895,7 +862,7 @@
         .timeline-marker {
             position: absolute;
             left: 50%;
-            top: -40px;
+            top: -35px;
             transform: translateX(-50%);
             width: 24px;
             height: 24px;
@@ -909,9 +876,9 @@
         .timeline-box {
             background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,248,248,0.98) 100%);
             border-radius: 20px;
-            padding: 35px;
+            padding: 30px;
             box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
-            max-width: 400px;
+            max-width: 100%;
             position: relative;
             z-index: 5;
             margin: 0 auto;
@@ -931,19 +898,19 @@
             font-size: 1.8rem;
             color: #8B9A46;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-align: center;
         }
 
         .timeline-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #333;
             line-height: 1.5;
             text-align: center;
         }
 
-        /* Форма подтверждения */
+        /* Форма подтверждения - РАБОЧАЯ ВЕРСИЯ */
         .rsvp-section {
             background: linear-gradient(135deg, rgba(250,250,250,0.95) 0%, rgba(242,242,242,0.95) 100%);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
@@ -975,98 +942,67 @@
             border-radius: 2px;
         }
 
-        .rsvp-form {
+        .rsvp-instructions {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid #e9ecef;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .rsvp-btn-container {
             max-width: 600px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-            border: 3px solid #8B9A46;
         }
 
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        .form-label {
+        .rsvp-btn {
             display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: #2D3142;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .form-input,
-        .form-textarea {
             width: 100%;
-            padding: 15px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #8B9A46;
-            box-shadow: 0 0 10px rgba(139, 154, 70, 0.2);
-        }
-
-        .form-textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .radio-group {
-            display: flex;
-            gap: 30px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-
-        .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .form-radio {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-
-        .submit-btn {
             background: linear-gradient(135deg, #8B9A46 0%, #a8b388 100%);
             color: white;
             border: none;
-            padding: 20px 60px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
+            padding: 25px;
+            font-family: 'Aquarelle', cursive;
+            font-size: 1.6rem;
             font-weight: 600;
             border-radius: 50px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(139, 154, 70, 0.4);
-            display: inline-block;
-            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(139, 154, 70, 0.4);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        .submit-btn:hover {
+        .rsvp-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(139, 154, 70, 0.6);
+            box-shadow: 0 15px 35px rgba(139, 154, 70, 0.6);
         }
 
-        .submit-btn:active {
+        .rsvp-btn:active {
             transform: translateY(1px);
+        }
+
+        .rsvp-btn::after {
+            content: '→';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            transition: right 0.3s ease;
+        }
+
+        .rsvp-btn:hover::after {
+            right: 20px;
         }
 
         /* Футер */
@@ -1241,7 +1177,7 @@
             }
 
             .calendar-container {
-                padding: 30px 20px;
+                padding: 25px 15px;
             }
 
             .calendar-month {
@@ -1257,18 +1193,18 @@
             }
 
             .calendar-date {
-                font-size: 0.95rem;
-                padding: 8px;
+                font-size: 0.9rem;
+                padding: 6px;
             }
 
             .countdown-container {
                 flex-wrap: wrap;
-                gap: 20px;
+                gap: 15px;
             }
 
             .countdown-box {
-                min-width: 100px;
-                padding: 25px 15px;
+                min-width: 90px;
+                padding: 20px 12px;
             }
 
             .countdown-number {
@@ -1280,7 +1216,7 @@
             }
 
             .map-container {
-                height: 350px;
+                height: 300px;
             }
 
             .photos-grid {
@@ -1288,7 +1224,7 @@
             }
 
             .photo-card {
-                height: 350px;
+                height: 300px;
             }
 
             .dresscode-palette {
@@ -1314,17 +1250,17 @@
                 padding: 25px;
             }
 
-            .radio-group {
-                flex-direction: column;
-                gap: 15px;
-            }
-
             .couple-names {
                 font-size: 2rem;
             }
 
             .footer-text {
                 font-size: 1rem;
+            }
+
+            .rsvp-btn {
+                font-size: 1.4rem;
+                padding: 22px;
             }
         }
 
@@ -1364,24 +1300,24 @@
             }
 
             .calendar-grid {
-                gap: 6px;
-                padding-bottom: 20px;
+                gap: 5px;
+                padding-bottom: 15px;
             }
 
             .calendar-date {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
                 aspect-ratio: auto;
-                padding: 10px 5px;
+                padding: 8px 4px;
             }
 
             .calendar-date.today::after {
-                font-size: 0.8rem;
-                bottom: -28px;
+                font-size: 0.75rem;
+                bottom: -25px;
             }
 
             .countdown-box {
-                min-width: 85px;
-                padding: 20px 12px;
+                min-width: 80px;
+                padding: 18px 10px;
             }
 
             .countdown-number {
@@ -1393,19 +1329,19 @@
             }
 
             .map-container {
-                height: 280px;
+                height: 250px;
             }
 
             .photo-card {
-                height: 280px;
+                height: 250px;
             }
 
             .photo-title {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .photo-description {
-                font-size: 0.95rem;
+                font-size: 0.9rem;
             }
 
             .dresscode-color {
@@ -1423,23 +1359,21 @@
             }
 
             .timeline-text {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
             }
 
-            .form-input,
-            .form-textarea {
-                font-size: 0.95rem;
-                padding: 12px;
+            .rsvp-btn {
+                font-size: 1.3rem;
+                padding: 20px;
             }
 
-            .submit-btn {
-                padding: 15px 40px;
-                font-size: 1.1rem;
-                width: 100%;
+            .rsvp-btn::after {
+                font-size: 1.6rem;
             }
 
-            .rsvp-form {
-                padding: 30px 20px;
+            .rsvp-instructions {
+                padding: 25px 20px;
+                font-size: 1rem;
             }
 
             .couple-names {
@@ -1454,12 +1388,7 @@
 </head>
 <body>
     <!-- Фон с нарисованными цветами -->
-    <div class="flower-bg">
-        <div class="flower flower-1">✿</div>
-        <div class="flower flower-2">❀</div>
-        <div class="flower flower-3">❁</div>
-        <div class="flower flower-4">✾</div>
-    </div>
+    <div class="flower-bg"></div>
 
     <!-- Фон для фотографий -->
     <div class="photo-bg"></div>
@@ -1689,40 +1618,15 @@
         <div class="pulse-border"></div>
         <div class="container">
             <h2 class="rsvp-title">Подтвердите свое присутствие</h2>
-            <div class="rsvp-form">
-                <!-- Работающая форма подтверждения -->
-                <form id="rsvpForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfZVYHvYJ8QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3QZ3/formResponse" method="POST" target="_blank">
-                    <div class="form-group">
-                        <label class="form-label" for="fullName">ФИО гостя *</label>
-                        <input type="text" id="fullName" name="entry.123456789" class="form-input" required placeholder="Введите ваше полное имя">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Будете ли вы на свадьбе? *</label>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input type="radio" name="entry.987654321" class="form-radio" value="Да, буду!" required>
-                                <span>Да, буду!</span>
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="entry.987654321" class="form-radio" value="К сожалению, не смогу">
-                                <span>К сожалению, не смогу</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="guests">Количество гостей (включая вас)</label>
-                        <input type="number" id="guests" name="entry.456789123" class="form-input" min="1" max="10" value="1">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label" for="message">Сообщение для молодоженов (необязательно)</label>
-                        <textarea id="message" name="entry.789123456" class="form-textarea" placeholder="Напишите что-нибудь приятное..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Отправить ✨</button>
-                </form>
+            
+            <div class="rsvp-instructions">
+                Чтобы подтвердить свое участие на нашей свадьбе, пожалуйста, перейдите по ссылке ниже и заполните небольшую форму. Это займет всего 1 минуту!
+            </div>
+            
+            <div class="rsvp-btn-container">
+                <a href="https://forms.gle/giyYjt2Jy3xTdGsS7" target="_blank" class="rsvp-btn" id="rsvpBtn">
+                    Подтвердить участие
+                </a>
             </div>
         </div>
     </section>
@@ -1851,6 +1755,16 @@
             }, observerOptions);
             
             dresscodeObserver.observe(dresscodeSection);
+            
+            // Отслеживание подтверждений
+            const rsvpBtn = document.getElementById('rsvpBtn');
+            rsvpBtn.addEventListener('click', function() {
+                // Отправляем событие в аналитику (если нужно)
+                console.log('Гость перешел к подтверждению участия');
+                
+                // Можно добавить аналитику здесь
+                // Например: gtag('event', 'rsvp_click');
+            });
         });
     </script>
 </body>
