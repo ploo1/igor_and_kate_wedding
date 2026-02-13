@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение на свадьбу Игоря и Екатерины</title>
-    <!-- Подключение шрифта Aquarelle для заголовков -->
+    <!-- Подключение шрифта Aquarelle -->
     <link href="https://fonts.googleapis.com/css2?family=Aquarelle&display=swap" rel="stylesheet">
     <!-- Подключение шрифта для основного текста -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -24,6 +24,55 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* Фон с нарисованными цветами */
+        .flower-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .flower {
+            position: absolute;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .flower-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 5rem;
+            color: #8B9A46;
+            transform: rotate(20deg);
+        }
+
+        .flower-2 {
+            top: 30%;
+            right: 10%;
+            font-size: 7rem;
+            color: #a8b388;
+            transform: rotate(-15deg);
+        }
+
+        .flower-3 {
+            bottom: 20%;
+            left: 15%;
+            font-size: 6rem;
+            color: #d2b48c;
+            transform: rotate(10deg);
+        }
+
+        .flower-4 {
+            bottom: 15%;
+            right: 20%;
+            font-size: 5rem;
+            color: #ffb6c1;
+            transform: rotate(-25deg);
         }
 
         /* Фон для фотографий */
@@ -236,7 +285,7 @@
         }
 
         .calendar-month {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Aquarelle', cursive;
             font-size: 2.8rem;
             color: #2D3142;
             font-weight: 500;
@@ -245,7 +294,7 @@
         }
 
         .calendar-year {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Aquarelle', cursive;
             font-size: 1.4rem;
             color: #8B9A46;
             font-weight: 500;
@@ -256,6 +305,9 @@
             grid-template-columns: repeat(7, 1fr);
             gap: 12px;
             margin-top: 25px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 10px;
         }
 
         .calendar-day-name {
@@ -414,7 +466,7 @@
         }
 
         .countdown-number {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Aquarelle', cursive;
             font-size: 3rem;
             font-weight: 600;
             color: #2D3142;
@@ -875,7 +927,7 @@
         }
 
         .timeline-time {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Aquarelle', cursive;
             font-size: 1.8rem;
             color: #8B9A46;
             font-weight: 600;
@@ -1311,6 +1363,11 @@
                 font-size: 0.95rem;
             }
 
+            .calendar-grid {
+                gap: 6px;
+                padding-bottom: 20px;
+            }
+
             .calendar-date {
                 font-size: 0.8rem;
                 aspect-ratio: auto;
@@ -1396,6 +1453,14 @@
     </style>
 </head>
 <body>
+    <!-- Фон с нарисованными цветами -->
+    <div class="flower-bg">
+        <div class="flower flower-1">✿</div>
+        <div class="flower flower-2">❀</div>
+        <div class="flower flower-3">❁</div>
+        <div class="flower flower-4">✾</div>
+    </div>
+
     <!-- Фон для фотографий -->
     <div class="photo-bg"></div>
 
