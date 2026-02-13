@@ -307,6 +307,8 @@
             animation: popIn 0.3s ease;
             animation-fill-mode: both;
             border: 2px solid transparent;
+            /* Убедимся, что все ячейки круглые */
+            border-radius: 50% !important;
         }
 
         .calendar-date:nth-child(n+8) {
@@ -324,12 +326,31 @@
             color: white;
             box-shadow: 0 8px 25px rgba(139, 154, 70, 0.5);
             transform: scale(1.2);
-            animation: pulse 2s infinite;
             font-size: 1.3rem;
             font-weight: 600;
             position: relative;
             z-index: 10;
             border-color: #8B9A46;
+            /* Убедимся, что сегодняшняя дата круглая */
+            border-radius: 50% !important;
+            /* Добавим круглую пульсирующую ауру */
+            animation: circularPulse 2s infinite;
+        }
+
+        /* Круглая пульсирующая аура */
+        .calendar-date.today::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 0 0 0 0 rgba(139, 154, 70, 0.4);
+            z-index: -1;
+            animation: circularPulseShadow 2s infinite;
         }
 
         .calendar-date.today::after {
@@ -360,6 +381,25 @@
         .calendar-date.future:hover {
             border-color: #8B9A46;
             background: #f8f9fa;
+        }
+
+        /* Круглая пульсация */
+        @keyframes circularPulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(139, 154, 70, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(139, 154, 70, 0);
+            }
+        }
+
+        @keyframes circularPulseShadow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(139, 154, 70, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(139, 154, 70, 0);
+            }
         }
 
         /* Таймер обратного отсчета */
@@ -1761,9 +1801,6 @@
             rsvpBtn.addEventListener('click', function() {
                 // Отправляем событие в аналитику (если нужно)
                 console.log('Гость перешел к подтверждению участия');
-                
-                // Можно добавить аналитику здесь
-                // Например: gtag('event', 'rsvp_click');
             });
         });
     </script>
